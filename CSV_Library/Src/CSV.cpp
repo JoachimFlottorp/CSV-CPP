@@ -2,12 +2,7 @@
 
 CSVRow::CSVRow(std::vector<std::string> const& header, std::vector<std::string> const& row)
 	: header(header), row(row)
-{
-	if (header.size() != row.size())
-	{
-		throw std::runtime_error("header and row size mismatch");
-	}
-}
+{}
 
 std::string const& CSVRow::GetColumn(std::string const& column_name) const
 {
@@ -15,7 +10,7 @@ std::string const& CSVRow::GetColumn(std::string const& column_name) const
 	auto it = std::find(header.begin(), header.end(), column_name);
 	if (it == header.end())
 	{
-		throw std::runtime_error("column not found");
+		return "";
 	}
 
 	// find the index of the column
@@ -60,6 +55,8 @@ void CSVReader::LoadHeaderData()
 
 std::vector<std::string> CSVReader::ReadRowData()
 {
+	constexpr char QUOTE = '"';
+
 	std::vector<std::string> row = {};
 
 	std::string line;
@@ -71,17 +68,33 @@ std::vector<std::string> CSVReader::ReadRowData()
 	}
 
 	std::string cell;
-	for (char c : line)
+	for (auto it = line.begin(); it != line.end(); ++it)
 	{
-		if (c == delimeter)
+		char c = *it;
+
+		if (c == QUOTE)
 		{
+			++it;
+			while (it != line.end() && *it != QUOTE)
+			{
+				cell.push_back(*it);
+				++it;
+			}
+			continue;
+		}
+		else if (c == delimeter)
+		{
+			if (cell.empty())
+			{
+				continue;
+			}
 			row.push_back(cell);
 			cell.clear();
+			continue;
 		}
-		else
-		{
-			cell += c;
-		}
+
+		cell.push_back(c);
+
 	}
 	row.push_back(cell);
 
