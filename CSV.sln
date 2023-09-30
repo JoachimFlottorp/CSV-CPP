@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSV_Library", "CSV_Library\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestApplication", "TestApplication\TestApplication.vcxproj", "{9CA1F166-9B4A-49BA-90A7-49F325931D8C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Google_Test", "Google_Test\Google_Test.vcxproj", "{AB01EB45-55F1-40D1-BA37-AA64FB36C88B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{9CA1F166-9B4A-49BA-90A7-49F325931D8C}.Release|x64.Build.0 = Release|x64
 		{9CA1F166-9B4A-49BA-90A7-49F325931D8C}.Release|x86.ActiveCfg = Release|Win32
 		{9CA1F166-9B4A-49BA-90A7-49F325931D8C}.Release|x86.Build.0 = Release|Win32
+		{AB01EB45-55F1-40D1-BA37-AA64FB36C88B}.Debug|x64.ActiveCfg = Debug|x64
+		{AB01EB45-55F1-40D1-BA37-AA64FB36C88B}.Debug|x64.Build.0 = Debug|x64
+		{AB01EB45-55F1-40D1-BA37-AA64FB36C88B}.Debug|x86.ActiveCfg = Debug|Win32
+		{AB01EB45-55F1-40D1-BA37-AA64FB36C88B}.Debug|x86.Build.0 = Debug|Win32
+		{AB01EB45-55F1-40D1-BA37-AA64FB36C88B}.Release|x64.ActiveCfg = Release|x64
+		{AB01EB45-55F1-40D1-BA37-AA64FB36C88B}.Release|x64.Build.0 = Release|x64
+		{AB01EB45-55F1-40D1-BA37-AA64FB36C88B}.Release|x86.ActiveCfg = Release|Win32
+		{AB01EB45-55F1-40D1-BA37-AA64FB36C88B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

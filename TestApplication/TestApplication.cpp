@@ -1,5 +1,5 @@
-#include "../CSV_Library/CSV.h"
-#include "../CSV_Library/CSVBinder.h"
+#include "CSV.h"
+#include "CSVBinder.h"
 
 #include <iostream>
 #include <assert.h>
